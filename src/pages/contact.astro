@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ClientRouter, fade } from 'astro:transitions';
+---
+
+<Layout>
+    <main>
+        <section class="flex flex-col items-center mt-48 mx-11 lg:max-w-2xl sm:max-w-xl" >
+            <h1 class="text-4xl font-bold">Contacto</h1>
+            <h2 class="text-sm font-extralight opacity-75">Web developer and designer</h2>
+    </section>
+    </main>
+    <ClientRouter transition:animate={fade()}/>
+</Layout>

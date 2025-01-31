@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Experience from '../components/Experience.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at httpsn://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { ClientRouter, fade } from 'astro:transitions';
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+        <section class="flex flex-col items-center mt-48 mx-11 lg:max-w-2xl sm:max-w-xl"  >
+            <h1 class="text-4xl font-bold">./ramiurrutia</h1>
+
+            <h2 class="text-sm font-extralight opacity-75">Web developer and designer</h2>
+            <p class="mt-4 font-light text-wrap"><span class="text-green-200 font-semibold">+2 years of experience</span> passionate about creating modern and efficient websites. With a strong background in backend development and web infrastructure, I specialize in designing scalable, secure, and high-performing web applications.</p>
+        </section>
+
+        <section>
+            <Experience />
+        </section>
+    </main>
+    <ClientRouter transition:animate={fade()}/>
 </Layout>
