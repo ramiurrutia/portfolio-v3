@@ -1,0 +1,87 @@
+---
+import Badge from "./Badge.astro"
+import TailwindCSS from "./icons/TailwindCSS.astro"
+import NextJS from "./icons/NextJS.astro"
+import GithubIcon from "./icons/Github.astro"
+
+const TAGS = {
+    NEXT: {
+    name: "Next",
+    icon: NextJS,
+    class: "text-white bg-neutral-950/10"
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        icon: TailwindCSS,
+        class: "text-[#40bcfc] bg-[#40bcfc]/10"
+    }
+}
+const projects = [
+    {
+        title: "Todo List + Full Habit Tracker",
+        description: "An app to track your habits and tasks, with a todo list. With an easy intuitive UI, and a database to store your data.",
+        tags: [TAGS.NEXT, TAGS.TAILWIND],
+        github: "https://github.com/ramiurrutia",
+        image: "https://via.placeholder.com/150",
+        link: "https://example.com/project1",
+    },
+    {
+        title: "URL Shortener + IA",
+        description: "An app to shorten your URLs and get answers to your questions with an AI. With a simple and easy-to-use UI, and a database to store your data.",
+        tags: [TAGS.NEXT, TAGS.TAILWIND],
+        image: "https://via.placeholder.com/150",
+        github: "https://github.com/ramiurrutia",
+        link: "https://example.com/project2",
+    }
+]
+
+---
+
+{projects.map((project) => (
+    <div class="relative flex flex-col md:flex-row w-full my-6 bg-neutral-900 shadow-2xl border border-slate-500/40 rounded-2xl shadow-white/5">
+        <div class="relative p-2.5 md:w-2/5 shrink-0 overflow-hidden">
+            <img
+                src={project.image}
+                alt="card-image"
+                class="h-full w-full rounded-md md:rounded-lg object-cover"
+            />
+        </div>
+        <div class="p-6">
+            <ul class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                <li class=`${tag.class} flex flex-row items-center gap-2 px-2 py-0.5 border border-slate-500/40 rounded-full`>
+                    <tag.icon class="size-4"/>
+                    {tag.name}
+                </li>
+                ))}
+            </ul>
+            <h4 class="mb-2 text-slate-100 text-xl font-semibold mt-3">
+                {project.title}
+            </h4>
+            <p class="mb-8 text-slate-300 leading-normal font-light">
+                {project.description}
+            </p>
+            <div class="flex gap-2 items-center">
+
+            <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-300 flex gap-1.5 items-center transition-all duration-300 border rounded-full border-slate-200/10 px-3 py-1 min-w-30"
+            > 
+<svg  class="size-5"="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
+Go to project
+            </a>
+            <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-100 hover:text-slate-300 flex gap-1.5 items-center transition-all duration-300 border rounded-full border-slate-100/50 px-3 py-1 min-w-30"
+            > 
+                <GithubIcon class="size-5"/>
+                Code
+            </a>
+            </div>
+        </div>
+    </div>
+            ))}

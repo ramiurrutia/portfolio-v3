@@ -1,21 +1,22 @@
 ---
+import CardProject from '../components/CardProject.astro';
 import Experience from '../components/Experience.astro';
 import Layout from '../layouts/Layout.astro';
-import { ClientRouter, fade } from 'astro:transitions';
+import { ClientRouter, fade, slide } from 'astro:transitions';
 ---
 
 <Layout>
 	<main>
         <section class="flex flex-col items-center mt-48 mx-11 lg:max-w-2xl sm:max-w-xl"  >
-            <h1 class="text-4xl font-bold">./ramiurrutia</h1>
+            <h1 class="text-4xl font-bold bg-gradient-to-t from-[#5d6177] to-[#6c77d0] bg-clip-text text-transparent" transition:animate="fade">./ramiurrutia</h1>
 
-            <h2 class="text-sm font-extralight opacity-75">Web developer and designer</h2>
-            <p class="mt-4 font-light text-wrap"><span class="text-green-200 font-semibold">+2 years of experience</span> passionate about creating modern and efficient websites. With a strong background in backend development and web infrastructure, I specialize in designing scalable, secure, and high-performing web applications.</p>
+            <h2 class="text-sm font-extralight opacity-75 ">Web developer and designer</h2>
+            <p class="mt-4 font-extralight text-center"><span class="text-green-200 font-medium">+2 years of experience</span> passionate about <span class="text-indigo-400 font-medium">creating modern and efficient websites</span>. With a strong background in backend development and web infrastructure, I specialize in designing <span class="text-green-200 font-medium">scalable, secure, and high-performing<span> web applications.</p>
         </section>
 
-        <section>
-            <Experience />
+        <section class="flex flex-col mt-48 mx-11 lg:max-w-2xl sm:max-w-xl">
+            <CardProject />
         </section>
     </main>
-    <ClientRouter transition:animate={fade()}/>
+    <ClientRouter transition:animate={slide()}/>
 </Layout>
