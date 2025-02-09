@@ -1,6 +1,8 @@
 ---
 import CardProject from '../components/CardProject.astro';
 import Experience from '../components/Experience.astro';
+import Code from '../components/icons/Code.astro';
+import Notebook from '../components/icons/Notebook.astro'
 import Layout from '../layouts/Layout.astro';
 import { ClientRouter, fade, slide } from 'astro:transitions';
 ---
@@ -8,13 +10,17 @@ import { ClientRouter, fade, slide } from 'astro:transitions';
 <Layout>
 	<main>
         <section class="flex flex-col items-center mt-48 mx-11 lg:max-w-2xl sm:max-w-xl"  >
-            <h1 class="text-4xl font-bold bg-gradient-to-t from-[#5d6177] to-[#6c77d0] bg-clip-text text-transparent" transition:animate="fade">./ramiurrutia</h1>
-
-            <h2 class="text-sm font-extralight opacity-75 ">Web developer and designer</h2>
-            <p class="mt-4 font-extralight text-center"><span class="text-green-200 font-medium">+2 years of experience</span> passionate about <span class="text-indigo-400 font-medium">creating modern and efficient websites</span>. With a strong background in backend development and web infrastructure, I specialize in designing <span class="text-green-200 font-medium">scalable, secure, and high-performing<span> web applications.</p>
+            <h1 class="text-5xl font-bold bg-gradient-to-t from-slate-400 to-indigo-500 bg-clip-text text-transparent" transition:animate="fade">./ramiurrutia</h1>
+            <h2 class="text-sm font-light text-indigo-100/80">Web developer and designer</h2>
+            
+            <p class="mt-4 font-extralight text-center"><span class="text-amber-200 font-medium">+2 years of experience</span> passionate about <span class="text-zinc-400 font-medium">creating modern and efficient websites</span>. <br>With a strong background in backend development and web infrastructure, I specialize in designing <span class="text-amber-200 font-medium">scalable, secure, and high-performing<span> web applications.</p>
         </section>
 
-        <section class="flex flex-col mt-48 mx-11 lg:max-w-2xl sm:max-w-xl">
+        <section class="flex flex-col mt-48 mx-11 lg:max-w-2xl sm:max-w-xl items-center">
+            <div>
+                <h2 class="text-3xl font-semibold text-indigo-300 flex gap-3 items-center"><Code class="size-12"/> Projects</h2>
+            </div>
+            
             <CardProject />
         </section>
     </main>
